@@ -33,17 +33,17 @@ class Player {
 
   takeItem(itemName) {
     // loop items.length
+    let removed = this.currentRoom.getItemByName(itemName);
+    if (removed) {
+      this.items.push(removed);
+    }
     // test by create player item
   }
 
   dropItem(itemName) {
-    for (let i = 0; i < this.items.length; i++) {
-      let playerItem = this.items[i];
-      if (itemName === playerItem) {
-        this.items.splice(i, 1);
-        room.items.push(itemName);
-        return;
-      }
+    let removed = this.getItemByName(itemName);
+    if (removed) {
+      this.currentRoom.items.push(removed);
     }
   }
 
