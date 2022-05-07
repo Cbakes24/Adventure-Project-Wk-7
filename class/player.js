@@ -1,3 +1,5 @@
+const { Room } = require("./room");
+
 class Player {
   constructor(name, startingRoom) {
     this.name = name;
@@ -30,11 +32,19 @@ class Player {
   }
 
   takeItem(itemName) {
-    // Fill this in
+    // loop items.length
+    // test by create player item
   }
 
   dropItem(itemName) {
-    // Fill this in
+    for (let i = 0; i < this.items.length; i++) {
+      let playerItem = this.items[i];
+      if (itemName === playerItem) {
+        this.items.splice(i, 1);
+        room.items.push(itemName);
+        return;
+      }
+    }
   }
 
   eatItem(itemName) {

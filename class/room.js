@@ -46,7 +46,7 @@ class Room {
   getItemByName(name) {
     for (let i = 0; i < this.items.length; i++) {
       let roomItem = this.items[i];
-      console.log(roomItem);
+      //console.log(roomItem);
 
       if (roomItem.name === name) {
         this.items.splice(i, 1);
